@@ -23,7 +23,14 @@ def sum_left_leaves(bn, left_sum):
 
 	return tot_sum
 
+''' 
+description: 
+given a string s, return the earliest index of a character that has a duplicate.
 
+test cases:
+given string "abba", return "a"
+given string "abcbc", return "b"
+'''
 def earliest_duplicate(s):
 	earliest_duplicate = len(s) + 1
 	str_to_pos = {}

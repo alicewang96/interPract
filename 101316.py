@@ -47,8 +47,24 @@ i = -1, j = -1, k = 2
 -1 + -1 + 2 = 0
 solution: (-1, -1, 2)
 '''
+def threeSum(self, nums):
+sums = set()
+nums = sorted(nums)
+i = 0
+while i < len(nums):
+    j = i + 1
+    k = len(nums) - 1
+    while j < k:
+	x, y, z = nums[i], nums[j], nums[k]
+	if (x + y + z > 0):
+	    k -= 1
+	    continue;
+	if (x + y + z == 0):
+	    sums.add((x, y, z))
+	j+=1
+    i += 1
 
-
+return list(sums)
 
 
         

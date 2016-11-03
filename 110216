@@ -1,0 +1,66 @@
+ https://www.hackerrank.com/challenges/binary-search-tree-insertion/submissions/code/31574954
+
+ /* Node is defined as :
+ class Node 
+    int data;
+    Node left;
+    Node right;
+    
+    */
+
+static Node Insert(Node root,int value)
+    {
+        if (root == null) {
+            Node newNode = new Node();
+            newNode.data = value;
+            newNode.right = null;
+            newNode.left = null;
+            root = newNode;
+        }
+        else if (root.data > value) {
+            root.left = Insert(root.left, value);
+        }
+        else {
+            root.right = Insert(root.right, value);
+        }
+    
+        return root;
+       
+    }
+
+// GCD Algorithm
+
+def gcd(self, A, B):
+        while B:
+            A, B = B, A%B
+        return A
+
+// Minimum sum of Fibonacci for any given A.
+
+def fibsum(A):
+    fib_to_A = checkfib(A)
+    fibALen = len(fib_to_A) - 1
+    num = A
+    fibSum = 0
+    count = 0
+
+    while fibSum < A:
+        largest = fib_to_A[fibALen]
+        if num in fib_to_A:
+            count += 1
+            return count
+        if largest < num:
+            fibSum += fib_to_A[fibALen]
+            count += 1
+            num -= largest
+        fibALen -= 1
+    return count
+        
+def checkfib(A):
+    fib_to_A = [1, 1]
+    i = 1
+    while fib_to_A[i] < A:
+        fib_to_A.append(fib_to_A[i-1] + fib_to_A[i])
+        i+=1
+    return fib_to_A
+
